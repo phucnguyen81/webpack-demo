@@ -1,0 +1,1 @@
+- Use prettier to format code
