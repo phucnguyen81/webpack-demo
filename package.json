@@ -4,18 +4,21 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "npm": "^9.6.7",
-    "prettier": "^2.8.8",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0"
+    "webpack-dev-server": "^4.15.0",
+    "css-loader": "^6.7.4",
+    "style-loader": "^3.3.3",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "lodash": "^4.17.21"
