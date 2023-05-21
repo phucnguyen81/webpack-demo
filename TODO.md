@@ -1,1 +1,3 @@
-- Use prettier to format code
+- [x] Use prettier to format code
+- [x] Configure html plugin to generate html file automatically
+- [ ] Reload the live server when the html file changes
