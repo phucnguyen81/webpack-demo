@@ -49,23 +49,55 @@ Example configs:
     },
     compress: true,
     port: 8082,
+    devMiddleware: { // required webpack-dev-middleware
+      writeToDisk: (filePath) => {
+        return /index\.html$/.test(filePath);
+      },
+    },
   }
+```
+
+# Dev Server Middlewares
+
+The `webpack-dev-middleware` plugin customizes the `webpack-dev-server` with middlewares.
+The middlwares can also be added to a custom server for development purposes.
+
+Example of a custom `express` server:
+
+```javascript
+const express = require("express");
+const webpack = require("webpack");
+const webpackDevMiddleware = require("webpack-dev-middleware");
+
+const app = express();
+const config = require("./webpack.config.js");
+const compiler = webpack(config);
+
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath, // configured inside webpack.config.js
+  })
+);
+
+app.listen(3000, () => {
+  console.log("Server is running on http://localhost:3000");
+});
 ```
 
 # HTML plugin
 
 The plugin `html-webpack-plugin` is used to generate an HTML file with the bundle injected.
-Note that we need to use `html-webpack-harddisk-plugin` to let the dev server picks up the changes.
+
+Note that we can use `html-webpack-harddisk-plugin` to let the dev server picks up the changes.
+However, this is already covered by the `writeToDisk` config in `webpack-dev-middleware`.
 
 Example configs:
 
 ```javascript
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',  // name of output file
-      template: 'src/index.html',  // name of input file
-      alwaysWriteToDisk: true,  // write to disk before the next middlewares run
+      filename: 'index.html',  // output file
+      template: 'src/index.html',  // input file
     }),
-    new HtmlWebpackHarddiskPlugin(),
   ],
 ```

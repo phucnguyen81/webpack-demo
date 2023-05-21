@@ -1,7 +1,6 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 
 module.exports = {
@@ -37,13 +36,16 @@ module.exports = {
     },
     compress: true,
     port: 9010,
+    devMiddleware: {
+      writeToDisk: (filePath) => {
+        return /index\.html$/.test(filePath);
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',  // output file
       template: 'src/index.html',  // input file
-      alwaysWriteToDisk: true,  // write output early to dev server can pick it up
     }),
-    new HtmlWebpackHarddiskPlugin(),
   ],
 };
