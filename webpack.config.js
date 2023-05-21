@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true, // remove output files before each build
   },
   module: {
     rules: [
