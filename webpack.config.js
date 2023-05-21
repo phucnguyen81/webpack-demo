@@ -37,13 +37,12 @@ module.exports = {
     },
     compress: true,
     port: 9010,
-    // liveReload: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'src/index.html',
-      alwaysWriteToDisk: true,
+      filename: 'index.html',  // output file
+      template: 'src/index.html',  // input file
+      alwaysWriteToDisk: true,  // write output early to dev server can pick it up
     }),
     new HtmlWebpackHarddiskPlugin(),
   ],

@@ -1,5 +1,0 @@
-- [x] Use prettier to format code
-- [x] Configure html plugin to generate html file automatically
-- [x] Reload the dev server when the html file changes
-- [ ] Move TODO to github issues
-- [ ] Configure webpack to use babel
