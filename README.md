@@ -1,6 +1,18 @@
 # Description
 
 Webpack lab for learning and experimentation.
+References: [webpack guides](https://webpack.js.org/guides/).
+
+# What is webpack?
+
+`webpack` is a tool for putting together a website from a bunch of resource files: HTML, CSS, JS, images, fonts, csv, xml, etc.
+
+`webpack` also contains other support tools:
+
+- a development server with hot reloading
+- a dev middleware for custom server
+- transpiles ES6+ code to ES5
+- and others
 
 # Default configs
 
