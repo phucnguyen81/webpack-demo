@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.4",
+    "html-webpack-harddisk-plugin": "^2.0.0",
     "html-webpack-plugin": "^5.5.1",
     "npm": "^9.6.7",
     "prettier": "^2.8.8",
