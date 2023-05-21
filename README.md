@@ -1,6 +1,6 @@
 # Description
 
-Learn webpack.
+Webpack lab for learning and experimentation.
 
 # Default configs
 
