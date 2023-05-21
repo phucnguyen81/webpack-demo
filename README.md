@@ -26,6 +26,9 @@ plugins: [
 Loaders are plugins used to transform files before they are added to the bundle.
 For example, `babel-loader` is used to transform ES6+ code to ES5.
 
+NOTE: sometimes if we don't see a resource gets served, the corresponding loader might be missing.
+For example, `ttf` fonts are not served by default event if with type `asset/resource`.
+
 ```javascript
 module: {
   rules: [

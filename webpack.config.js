@@ -17,16 +17,16 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.(woff|woff2)$/i,
+        type: "asset/resource",
+      },
+      {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
       {
         test: /\.svg/,
         type: "asset/inline",
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
       },
     ],
   },
